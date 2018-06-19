@@ -2,7 +2,7 @@ version: '3.3'
 services:
   post_db:
     env_file:
-     - docker.env
+     - .env
     image: mongo:${MONGO_IMAGE_VER}
     volumes:
       - post_db:/data/db
@@ -10,7 +10,7 @@ services:
       - back_net
   ui:
     env_file:
-     - docker.env
+     - .env
     build: ./ui
     image: ${USERNAME}/ui:${UI_IMAGE_VER}
     ports:
@@ -19,7 +19,7 @@ services:
       - front_net
   post:
     env_file:
-     - docker.env
+     - .env
     build: ./post-py
     image: ${USERNAME}/post:${POST_IMAGE_VER}
     networks:
@@ -27,7 +27,7 @@ services:
       - back_net
   comment:
     env_file:
-     - docker.env
+     - .env
     build: ./comment
     image: ${USERNAME}/comment:${COMM_IMAGE_VER}
     networks:
