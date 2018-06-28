@@ -60,3 +60,4 @@ variables:
 before_script:
   - cd reddit
   - bundle install 
+
