@@ -20,3 +20,16 @@ mleonovvv microservices repository
  - Исправил Dockerfile по рекомендациям hadolint
  - Создал volume для mongo
 
+### Homework-16. docker-4
+-------
+
+#### Что сделано ####
+ - Создан docker-compose.yml.
+ - Отредактирован для работы с множествеными сетями и параметризованны некоторые сущности.
+ - Создан файл docker.env с переменными окруженя, добавлен в .gitignore. Создан example.
+ - Создан docker-compose.override.yml, перезаписан вызов комманды puma.
+
+Префикс сущностей формируется из названия каталога в котором находится docker-compose.yml
+
+
+
