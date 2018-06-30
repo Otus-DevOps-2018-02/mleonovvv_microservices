@@ -1,0 +1,21 @@
+modules:
+  http_2xx:
+    prober: http
+    timeout: 5s
+    http:
+      method: GET
+      fail_if_ssl: false
+      fail_if_not_ssl: false
+      fail_if_matches_regexp:
+        - "Could not connect to database"
+      fail_if_not_matches_regexp:
+        - "Download the latest version here"
+      tls_config:
+        insecure_skip_verify: false
+      preferred_ip_protocol: "ip4" # defaults to "ip6"
+  icmp:
+    prober: icmp
+    timeout: 5s
+    icmp:
+      preferred_ip_protocol: "ip4"
+      source_ip_address: "black"
