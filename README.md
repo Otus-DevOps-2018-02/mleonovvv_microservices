@@ -48,3 +48,13 @@ mleonovvv microservices repository
  - Созданы dev, stage, production окружения
  - Условия их запуска (ручной, по условию наличия тэга)
  - Создано правило формирования динамического окружения
+
+### Homework-19. monitoring-1
+-------
+
+#### Что сделано ####
+ - Сконфигурирован и собран Docker-образ prometheus 
+ - Собраны образа приложения
+ - Сконфигурирован docker-compose.yml
+ - Добавлены exportes: node, blackbox, mongodb, cloudprober
+ - Создан Makefile
