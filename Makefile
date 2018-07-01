@@ -1,8 +1,8 @@
 default: all
 
-build: comment post ui prometheus cloudprober black alertmanager
+build: comment post ui prometheus cloudprober black alertmanager fluentd
 
-push: push-comment push-post push-ui push-prometheus push-cloudprober push-black
+push: push-comment push-post push-ui push-prometheus push-cloudprober push-black push-alertmanager push-fluentd
 
 comment:
 	cd src/comment && sh docker_build.sh
@@ -24,6 +24,9 @@ cloudprober:
 
 alertmanager:
 	docker build -t $(USER_NAME)/alertmanager monitoring/alertmanager
+
+fluentd:
+	docker build -t $(USER_NAME)/fluentd logging/fluentd/
 
 login: 
 	docker login -u $(USER_NAME) -p $(DOCKER_PASS)
@@ -48,3 +51,6 @@ push-black: login
 
 push-alertmanager: login
 	docker push $(USER_NAME)/alertmanager
+
+push-fluentd: login
+	docker push $(USER_NAME)/fluentd
