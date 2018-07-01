@@ -1,6 +1,6 @@
 default: all
 
-all: comment post ui prometheus cloudprober black push
+build: comment post ui prometheus cloudprober black alertmanager
 
 push: push-comment push-post push-ui push-prometheus push-cloudprober push-black
 
@@ -22,6 +22,9 @@ black:
 cloudprober:
 	docker build -t $(USER_NAME)/cloudprober monitoring/cloudprober
 
+alertmanager:
+	docker build -t $(USER_NAME)/alertmanager monitoring/alertmanager
+
 login: 
 	docker login -u $(USER_NAME) -p $(DOCKER_PASS)
 
@@ -42,3 +45,6 @@ push-cloudprober: login
 
 push-black: login
 	docker push $(USER_NAME)/black
+
+push-alertmanager: login
+	docker push $(USER_NAME)/alertmanager
