@@ -58,3 +58,17 @@ mleonovvv microservices repository
  - Сконфигурирован docker-compose.yml
  - Добавлены exportes: node, blackbox, mongodb, cloudprober
  - Создан Makefile
+
+### Homework-20. monitoring-2
+-------
+
+#### Что сделано ####
+ - Разделен docker-compose на два файла
+ - Установлен cAdvisor
+ - Установлена Graphana
+    - Сконфигурированны dashboard docker и Business_Logic_Monitoring 
+ - Установлен и сконфигурирован alertmanager
+    - Созданы правила
+    - Добавлена нотификация в слак
+ - Поправлен Makefile
+ - docker.hub URL https://hub.docker.com/r/mleonovvv/
