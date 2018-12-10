@@ -72,3 +72,24 @@ mleonovvv microservices repository
     - Добавлена нотификация в слак
  - Поправлен Makefile
  - docker.hub URL https://hub.docker.com/r/mleonovvv/
+
+
+### Homework-21. logging-1
+-------
+
+#### Что сделано ####
+ - Обновлены приложения в соответствии с веткой logging
+ - Сконфигурирован docker-compose-logging.yml
+ - Собран образ fluentd
+ - Контейнеры настроены на отправку логов в fluentd
+ - Сконфигурированна Kibana
+ - Применены фильтры обработки логов
+ - Сконфигурирован Zipkin
+
+### Homework-22. kubernetes-1
+-------
+
+#### Что сделано ####
+ - Созданы манифесты приложения
+ - Пройден сложный путь
+
